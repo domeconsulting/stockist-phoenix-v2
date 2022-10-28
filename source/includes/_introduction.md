@@ -4,6 +4,7 @@
 Bienvenido a la documentación online de las especificaciones PUSH de la API <b>Stockist-Phoenix-v2</b>.
 A través de esta API PUSH de precios e inventario de la plataforma Hotetec. 
 A través de esta API Hotetec enviará precios e inventario y recuperará las reservas de la plataforma distribuidora. 
+Las xsd de esta API pueden descargarse en el siguiente enlace: [Enlace XSDs](https://drive.google.com/file/d/1e-whXlsigGlAZEpjoi9UE6lUNfB7jZlU/view?usp=sharing)
 
 La creación y configuración inicial del hotel, así como de sus tarifas e inventario, se realizará a través de la extranet web
 [https://hotel.new.hotetec.com](https://hotel.new.hotetec.com). Una vez realizada la configuración, se podrá utilizar la API PUSH Stockist-Phoenix para realizar

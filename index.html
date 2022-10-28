@@ -288,7 +288,7 @@
 
   </head>
 
-  <body class="index" data-languages="[&quot;json&quot;]">
+  <body class="index" data-languages="[&quot;xml&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -298,7 +298,7 @@
     <div class="toc-wrapper">
       <img src="images/logo-980bcc6d.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="json">json</a>
+              <a href="#" data-language-name="xml">xml</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -382,19 +382,19 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
-<li>Mensajería JSON sobre HTTP. Hotetec enviará las peticiones por <b>HTTP RAW POST</b> (POST sin paso de parámetros).</li>
+<li>Mensajería XML sobre HTTP. Hotetec enviará las peticiones por <b>HTTP RAW POST</b> (POST sin paso de parámetros).</li>
 <li>La codificación de los mensajes es <b>UTF-8</b>.</li>
 <li>Todos los mensajes soportan compresión <b>gzip</b>. </li>
 </ul>
 <h1 id='autenticacion'>Autenticación</h1>
 <blockquote>
-<p>Ejemplo elemento credentials, presente en todas las peticiones JSON</p>
+<p>Ejemplo elemento credentials, presente en todas las peticiones XML</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"userTest"</span><span class="w">
-   </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passwordTest"</span><span class="p">,</span><span class="w">   
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;RoomRatesRetrievalRequest&gt;</span>
+   <span class="nt">&lt;user&gt;</span>userTest<span class="nt">&lt;/user&gt;</span>
+   <span class="nt">&lt;password&gt;</span>passwordTest<span class="nt">&lt;/password&gt;</span>   
+<span class="nt">&lt;/RoomRatesRetrievalRequest&gt;</span>
+</code></pre></div>
 <p>Todas las peticiones contienen los elementos user y password (ejemplo a la derecha), el cuál contiene las credenciales de autenticación (usuario y password) que deberán ser proporcionadas por el distribuidor.</p>
 
 <p><strong>El distribuidor debe proporcionar user, password y url del endpoint al que enviar las peticiones.</strong></p>
@@ -402,26 +402,48 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <blockquote>
 <p>Ejemplo RoomRatesRetrievalRequest para recuperar la información del hotel (habitaciones y tarifas)</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"RoomRatesRetrievalRequest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"userTest"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passwordTest"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"hotelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;RoomRatesRetrievalRequest&gt;</span>
+    <span class="nt">&lt;user&gt;</span>userTest<span class="nt">&lt;/user&gt;</span>
+    <span class="nt">&lt;password&gt;</span>passwordTest<span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;hotelCode&gt;</span>1234<span class="nt">&lt;/hotelCode&gt;</span>    
+<span class="nt">&lt;/RoomRatesRetrievalRequest&gt;</span>
+</code></pre></div>
 <blockquote>
 <p>Ejemplo respuesta RoomRatesRetrievalResponse procesada correctamente</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"RoomRatesRetrievalResponse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"hotel"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-
-     </span><span class="p">}]</span><span class="w">  
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;RoomRatesRetrievalResponse&gt;</span>
+    <span class="nt">&lt;hotel&gt;</span>
+        <span class="nt">&lt;code&gt;</span>1234<span class="nt">&lt;/code&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Hotel Test<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;room&gt;</span>
+            <span class="nt">&lt;code&gt;</span>DBLA2<span class="nt">&lt;/code&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Double Standard<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;occupation&gt;</span>
+                <span class="nt">&lt;adults&gt;</span>2<span class="nt">&lt;/adults&gt;</span>
+                <span class="nt">&lt;children&gt;</span>0<span class="nt">&lt;/children&gt;</span>
+                <span class="nt">&lt;infant&gt;</span>0<span class="nt">&lt;/infant&gt;</span>
+            <span class="nt">&lt;/occupation&gt;</span>
+            <span class="nt">&lt;occupation&gt;</span>
+                <span class="nt">&lt;adults&gt;</span>2<span class="nt">&lt;/adults&gt;</span>
+                <span class="nt">&lt;children&gt;</span>1<span class="nt">&lt;/children&gt;</span>
+                <span class="nt">&lt;infant&gt;</span>0<span class="nt">&lt;/infant&gt;</span>
+            <span class="nt">&lt;/occupation&gt;</span>
+            <span class="nt">&lt;rate&gt;</span>
+                <span class="nt">&lt;code&gt;</span>NRE<span class="nt">&lt;/code&gt;</span>
+                <span class="nt">&lt;name&gt;</span>No refundable rate<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;mealplan&gt;</span>
+                    <span class="nt">&lt;code&gt;</span>RO<span class="nt">&lt;/code&gt;</span>
+                    <span class="nt">&lt;name&gt;</span>Room Only<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;/mealplan&gt;</span>
+                <span class="nt">&lt;mealplan&gt;</span>
+                    <span class="nt">&lt;code&gt;</span>AI<span class="nt">&lt;/code&gt;</span>
+                    <span class="nt">&lt;name&gt;</span>All Inclusive<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;/mealplan&gt;</span>
+            <span class="nt">&lt;/rate&gt;</span>
+        <span class="nt">&lt;/room&gt;</span>
+    <span class="nt">&lt;/hotel&gt;</span>
+<span class="nt">&lt;/RoomRatesRetrievalResponse&gt;</span>
+</code></pre></div>
 <p>Mensaje utilizado para consultar la información de un hotel (habitaciones y  tarifas).</p>
 <h3 id='roomratesretrievalrequest'>RoomRatesRetrievalRequest</h3>
 <p>Mensaje petición para consultar la información de un hotel (habitaciones y tarifas).</p>
@@ -465,130 +487,100 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 </tr>
 </thead><tbody>
 <tr>
-<td>sessionId</td>
-<td><em>String</em></td>
+<td>hotel</td>
+<td><strong>Hotel</strong></td>
 <td>Sí</td>
-<td>Identificador de la sesión que ha procesado la transacción</td>
+<td>Información relativa al hotel</td>
 </tr>
 <tr>
-<td>roomRate[]</td>
-<td><strong>RoomRate</strong></td>
+<td>↳ @code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código del hotel</td>
+</tr>
+<tr>
+<td>↳ @name</td>
+<td><em>String</em></td>
+<td>NO</td>
+<td>Nombre del hotel</td>
+</tr>
+<tr>
+<td>↳ room[]</td>
+<td><strong>Room</strong></td>
+<td>Sí</td>
+<td>Información relativa a una habitacion del hotel</td>
+</tr>
+<tr>
+<td>↳↳ @code</td>
+<td>String</td>
+<td>Sí</td>
+<td>Código de la habitacion</td>
+</tr>
+<tr>
+<td>↳↳ @name</td>
+<td>String</td>
 <td>No</td>
-<td>Información asociada a una combinación de tarifa y modalidad de hotel</td>
+<td>Nombre de la habitacion</td>
 </tr>
 <tr>
-<td>↳ @rateCode</td>
-<td><em>String</em></td>
+<td>↳↳ occupation[]</td>
+<td><strong>Occupation</strong></td>
 <td>Sí</td>
-<td>Código de tarifa</td>
+<td>Ocupaciones de la habitacion</td>
 </tr>
 <tr>
-<td>↳ @roomCode</td>
-<td><em>String</em></td>
-<td>Sí</td>
-<td>Código de modalidad</td>
-</tr>
-<tr>
-<td>↳ roomRateDate</td>
-<td><strong>RomRateDate</strong></td>
-<td>Sí</td>
-<td>Información relativa a un rango de fechas</td>
-</tr>
-<tr>
-<td>↳↳ @dateFrom</td>
-<td><em>Date</em></td>
-<td>Sí</td>
-<td>Fecha desde (dd/MM/yyyy, rangos cerrados)</td>
-</tr>
-<tr>
-<td>↳↳ @dateTo</td>
-<td><em>Date</em></td>
-<td>Sí</td>
-<td>Fecha hasta (dd/MM/yyyy, rangos cerrados)</td>
-</tr>
-<tr>
-<td>↳↳ availableQuota</td>
+<td>↳↳↳ @adults</td>
 <td><em>Integer</em></td>
 <td>Sí</td>
-<td>Unidades de cupo disponible</td>
+<td>Numero de adultos de la ocupacion</td>
 </tr>
 <tr>
-<td>↳↳ status</td>
-<td><em>Enum</em></td>
-<td>Sí</td>
-<td>Estado del inventario <sup>1</sup></td>
-</tr>
-<tr>
-<td>↳↳ mealPlan[]</td>
-<td><strong>MealPlan</strong></td>
+<td>↳↳↳ @children</td>
+<td><em>Integer</em></td>
 <td>No</td>
-<td>Información asociada al régimen alimenticio</td>
+<td>Numero de niños de la ocupacion</td>
 </tr>
 <tr>
-<td>↳↳↳ @code</td>
+<td>↳↳↳ @infant</td>
+<td><em>Integer</em></td>
+<td>No</td>
+<td>Numero de bebés de la ocupacion</td>
+</tr>
+<tr>
+<td>↳↳ rate[]</td>
+<td><strong>Rate</strong></td>
+<td>Sí</td>
+<td>Información relativa a las tarifas de la habitacion</td>
+</tr>
+<tr>
+<td>↳↳↳ code</td>
 <td><em>String</em></td>
 <td>Sí</td>
-<td>Código de régimen alimenticio</td>
+<td>Código de la tarifa</td>
 </tr>
 <tr>
-<td>↳↳↳ minimumStay</td>
-<td><em>Integer</em></td>
-<td>Sí</td>
-<td>Días de estancia mínima (0: No hay estancia mínima)</td>
+<td>↳↳↳ name</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Nombre de la tarifa</td>
 </tr>
 <tr>
-<td>↳↳↳ maximumStay</td>
-<td><em>Integer</em></td>
+<td>↳↳↳ mealplan[]</td>
+<td><strong>Mealplan</strong></td>
 <td>Sí</td>
-<td>Días de estancia máxima (0: No hay límite de estancia)</td>
+<td>Informacion relativa a los regimenes alimenticios de la tarifa</td>
 </tr>
 <tr>
-<td>↳↳↳ release</td>
-<td><em>Integer</em></td>
+<td>↳↳↳↳ code</td>
+<td><em>String</em></td>
 <td>Sí</td>
-<td>Días de release (0: No hay release)</td>
+<td>Código del regimen alimenticio</td>
 </tr>
 <tr>
-<td>↳↳↳ closedOnCheckIn</td>
-<td><em>Boolean</em></td>
-<td>Sí</td>
-<td>Indica si no está permitida la entrada</td>
-</tr>
-<tr>
-<td>↳↳↳ closedOnCheckOut</td>
-<td><em>Boolean</em></td>
-<td>Sí</td>
-<td>Indica si no está permitida la salida</td>
-</tr>
-<tr>
-<td>↳↳↳ price[]</td>
-<td><strong>Price</strong></td>
-<td>Sí</td>
-<td>Precio para una ocupación</td>
-</tr>
-<tr>
-<td>↳↳↳↳ adults</td>
-<td><em>Integer</em></td>
-<td>Sí</td>
-<td>Número de adultos</td>
-</tr>
-<tr>
-<td>↳↳↳↳ children</td>
-<td><em>Integer</em></td>
-<td>Sí</td>
-<td>Número de niños</td>
-</tr>
-<tr>
-<td>↳↳↳↳ amount</td>
-<td><em>Double</em></td>
-<td>Sí</td>
-<td>Precio para el total de la ocupación (#.##)</td>
-</tr>
-<tr>
-<td>↳↳↳↳ status</td>
-<td><em>Enum</em></td>
-<td>Sí</td>
-<td>Estado de la ocupación</td>
+<td>↳↳↳↳ name</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Nombre del regimen alimenticio</td>
 </tr>
 <tr>
 <td>notification</td>
@@ -619,7 +611,7 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="json">json</a>
+                <a href="#" data-language-name="xml">xml</a>
           </div>
       </div>
     </div>

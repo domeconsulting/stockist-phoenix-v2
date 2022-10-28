@@ -1,0 +1,627 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API PUSH Stockist-Phoenix-V2</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-980bcc6d.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">json</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduccion" class="toc-h1 toc-link" data-title="Introducción">Introducción</a>
+          </li>
+          <li>
+            <a href="#control-de-versiones" class="toc-h1 toc-link" data-title="Control de versiones">Control de versiones</a>
+          </li>
+          <li>
+            <a href="#protocolo-de-conexion" class="toc-h1 toc-link" data-title="Protocolo de conexión">Protocolo de conexión</a>
+          </li>
+          <li>
+            <a href="#autenticacion" class="toc-h1 toc-link" data-title="Autenticación">Autenticación</a>
+          </li>
+          <li>
+            <a href="#roomratesretrieval" class="toc-h1 toc-link" data-title="RoomRatesRetrieval">RoomRatesRetrieval</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#roomratesretrievalrequest" class="toc-h2 toc-link" data-title="RoomRatesRetrievalRequest">RoomRatesRetrievalRequest</a>
+                  </li>
+                  <li>
+                    <a href="#roomratesretrievalresponse" class="toc-h2 toc-link" data-title="RoomRatesRetrievalResponse">RoomRatesRetrievalResponse</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='mailto:soporte@hotetec.com'>soporte@hotetec.com</a></li>
+            <li><a href='https://xml.hotetec.com'>Acceso Extranet</a></li>
+            <li><a href='http://www.hotetec.com'>www.hotetec.com</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduccion'>Introducción</h1>
+<blockquote>
+<p>Aquí podrá encontrar ejemplos de las diferente peticiones y repuestas soportadas por la API</p>
+</blockquote>
+
+<p>Bienvenido a la documentación online de las especificaciones PUSH de la API <b>Stockist-Phoenix-v2</b>.
+A través de esta API PUSH de precios e inventario de la plataforma Hotetec. 
+A través de esta API Hotetec enviará precios e inventario y recuperará las reservas de la plataforma distribuidora. </p>
+
+<p>La creación y configuración inicial del hotel, así como de sus tarifas e inventario, se realizará a través de la extranet web
+<a href="https://hotel.new.hotetec.com">https://hotel.new.hotetec.com</a>. Una vez realizada la configuración, se podrá utilizar la API PUSH Stockist-Phoenix para realizar
+el mantenimiento y gestión diaria. Funcionalidad soportada:</p>
+
+<ul>
+<li>Actualización de cupos</li>
+<li>Actualización de precios y restricciones (estancias mínimas, release...)</li>
+<li>Gestión de paros de venta</li>
+<li>Consulta de reservas</li>
+</ul>
+
+<aside class="success">
+<b>NOTA</b>: Gestionar el hotel a través del API PUSH Stockist-Phoenix no impide que se pueda seguir
+gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento son compatibles, prevaleciendo siempre la última actualización realizada
+</aside>
+<h1 id='control-de-versiones'>Control de versiones</h1>
+<aside class="notice">Versión actual <b>1.0.0</b></aside>
+
+<table><thead>
+<tr>
+<th>Fecha</th>
+<th>Autor</th>
+<th>Versión</th>
+<th>Cambios realizados</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>27/10/2022</td>
+<td>Isaac Fullana</td>
+<td>1.0.0</td>
+<td>Especificaciones PUSH de la API Stockist-Phoenix-v2</td>
+</tr>
+</tbody></table>
+<h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
+<ul>
+<li>Mensajería JSON sobre HTTP. Hotetec enviará las peticiones por <b>HTTP RAW POST</b> (POST sin paso de parámetros).</li>
+<li>La codificación de los mensajes es <b>UTF-8</b>.</li>
+<li>Todos los mensajes soportan compresión <b>gzip</b>. </li>
+</ul>
+<h1 id='autenticacion'>Autenticación</h1>
+<blockquote>
+<p>Ejemplo elemento credentials, presente en todas las peticiones JSON</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"userTest"</span><span class="w">
+   </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passwordTest"</span><span class="p">,</span><span class="w">   
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Todas las peticiones contienen los elementos user y password (ejemplo a la derecha), el cuál contiene las credenciales de autenticación (usuario y password) que deberán ser proporcionadas por el distribuidor.</p>
+
+<p><strong>El distribuidor debe proporcionar user, password y url del endpoint al que enviar las peticiones.</strong></p>
+<h1 id='roomratesretrieval'>RoomRatesRetrieval</h1>
+<blockquote>
+<p>Ejemplo RoomRatesRetrievalRequest para recuperar la información del hotel (habitaciones y tarifas)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"RoomRatesRetrievalRequest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"userTest"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passwordTest"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hotelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>Ejemplo respuesta RoomRatesRetrievalResponse procesada correctamente</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"RoomRatesRetrievalResponse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"hotel"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+
+     </span><span class="p">}]</span><span class="w">  
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Mensaje utilizado para consultar la información de un hotel (habitaciones y  tarifas).</p>
+<h3 id='roomratesretrievalrequest'>RoomRatesRetrievalRequest</h3>
+<p>Mensaje petición para consultar la información de un hotel (habitaciones y tarifas).</p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre de Usuario</td>
+</tr>
+<tr>
+<td>password</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Password</td>
+</tr>
+<tr>
+<td>hotelCode</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Código de hotel</td>
+</tr>
+</tbody></table>
+<h3 id='roomratesretrievalresponse'>RoomRatesRetrievalResponse</h3>
+<p>Mensaje respuesta que contiene la información del hotel publicada.</p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sessionId</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Identificador de la sesión que ha procesado la transacción</td>
+</tr>
+<tr>
+<td>roomRate[]</td>
+<td><strong>RoomRate</strong></td>
+<td>No</td>
+<td>Información asociada a una combinación de tarifa y modalidad de hotel</td>
+</tr>
+<tr>
+<td>↳ @rateCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de tarifa</td>
+</tr>
+<tr>
+<td>↳ @roomCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de modalidad</td>
+</tr>
+<tr>
+<td>↳ roomRateDate</td>
+<td><strong>RomRateDate</strong></td>
+<td>Sí</td>
+<td>Información relativa a un rango de fechas</td>
+</tr>
+<tr>
+<td>↳↳ @dateFrom</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Fecha desde (dd/MM/yyyy, rangos cerrados)</td>
+</tr>
+<tr>
+<td>↳↳ @dateTo</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Fecha hasta (dd/MM/yyyy, rangos cerrados)</td>
+</tr>
+<tr>
+<td>↳↳ availableQuota</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Unidades de cupo disponible</td>
+</tr>
+<tr>
+<td>↳↳ status</td>
+<td><em>Enum</em></td>
+<td>Sí</td>
+<td>Estado del inventario <sup>1</sup></td>
+</tr>
+<tr>
+<td>↳↳ mealPlan[]</td>
+<td><strong>MealPlan</strong></td>
+<td>No</td>
+<td>Información asociada al régimen alimenticio</td>
+</tr>
+<tr>
+<td>↳↳↳ @code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de régimen alimenticio</td>
+</tr>
+<tr>
+<td>↳↳↳ minimumStay</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Días de estancia mínima (0: No hay estancia mínima)</td>
+</tr>
+<tr>
+<td>↳↳↳ maximumStay</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Días de estancia máxima (0: No hay límite de estancia)</td>
+</tr>
+<tr>
+<td>↳↳↳ release</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Días de release (0: No hay release)</td>
+</tr>
+<tr>
+<td>↳↳↳ closedOnCheckIn</td>
+<td><em>Boolean</em></td>
+<td>Sí</td>
+<td>Indica si no está permitida la entrada</td>
+</tr>
+<tr>
+<td>↳↳↳ closedOnCheckOut</td>
+<td><em>Boolean</em></td>
+<td>Sí</td>
+<td>Indica si no está permitida la salida</td>
+</tr>
+<tr>
+<td>↳↳↳ price[]</td>
+<td><strong>Price</strong></td>
+<td>Sí</td>
+<td>Precio para una ocupación</td>
+</tr>
+<tr>
+<td>↳↳↳↳ adults</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Número de adultos</td>
+</tr>
+<tr>
+<td>↳↳↳↳ children</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Número de niños</td>
+</tr>
+<tr>
+<td>↳↳↳↳ amount</td>
+<td><em>Double</em></td>
+<td>Sí</td>
+<td>Precio para el total de la ocupación (#.##)</td>
+</tr>
+<tr>
+<td>↳↳↳↳ status</td>
+<td><em>Enum</em></td>
+<td>Sí</td>
+<td>Estado de la ocupación</td>
+</tr>
+<tr>
+<td>notification</td>
+<td><strong>Notification</strong></td>
+<td>No</td>
+<td>Información de notificación (Error o Warning)</td>
+</tr>
+<tr>
+<td>↳ type</td>
+<td><em>Enum</em></td>
+<td>Sí</td>
+<td>Tipo de notificación (E:Error, W: Warning)</td>
+</tr>
+<tr>
+<td>↳ code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de la notificación</td>
+</tr>
+<tr>
+<td>↳ text</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Texto descriptivo de la notificación</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">json</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

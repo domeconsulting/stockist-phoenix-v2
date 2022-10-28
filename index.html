@@ -328,6 +328,17 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#bookingretrieval" class="toc-h1 toc-link" data-title="BookingRetrieval">BookingRetrieval</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#bookingretrievalrequest" class="toc-h2 toc-link" data-title="BookingRetrievalRequest">BookingRetrievalRequest</a>
+                  </li>
+                  <li>
+                    <a href="#bookingretrievalresponse" class="toc-h2 toc-link" data-title="BookingRetrievalResponse">BookingRetrievalResponse</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='mailto:soporte@hotetec.com'>soporte@hotetec.com</a></li>
@@ -411,38 +422,48 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <blockquote>
 <p>Ejemplo respuesta RoomRatesRetrievalResponse procesada correctamente</p>
 </blockquote>
-<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;RoomRatesRetrievalResponse&gt;</span>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;RoomRatesRetrievalResponse&gt;</span>
     <span class="nt">&lt;hotel&gt;</span>
         <span class="nt">&lt;code&gt;</span>1234<span class="nt">&lt;/code&gt;</span>
         <span class="nt">&lt;name&gt;</span>Hotel Test<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;room&gt;</span>
-            <span class="nt">&lt;code&gt;</span>DBLA2<span class="nt">&lt;/code&gt;</span>
-            <span class="nt">&lt;name&gt;</span>Double Standard<span class="nt">&lt;/name&gt;</span>
-            <span class="nt">&lt;occupation&gt;</span>
-                <span class="nt">&lt;adults&gt;</span>2<span class="nt">&lt;/adults&gt;</span>
-                <span class="nt">&lt;children&gt;</span>0<span class="nt">&lt;/children&gt;</span>
-                <span class="nt">&lt;infant&gt;</span>0<span class="nt">&lt;/infant&gt;</span>
-            <span class="nt">&lt;/occupation&gt;</span>
-            <span class="nt">&lt;occupation&gt;</span>
-                <span class="nt">&lt;adults&gt;</span>2<span class="nt">&lt;/adults&gt;</span>
-                <span class="nt">&lt;children&gt;</span>1<span class="nt">&lt;/children&gt;</span>
-                <span class="nt">&lt;infant&gt;</span>0<span class="nt">&lt;/infant&gt;</span>
-            <span class="nt">&lt;/occupation&gt;</span>
-            <span class="nt">&lt;rate&gt;</span>
-                <span class="nt">&lt;code&gt;</span>NRE<span class="nt">&lt;/code&gt;</span>
-                <span class="nt">&lt;name&gt;</span>No refundable rate<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;mealplan&gt;</span>
-                    <span class="nt">&lt;code&gt;</span>RO<span class="nt">&lt;/code&gt;</span>
-                    <span class="nt">&lt;name&gt;</span>Room Only<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;/mealplan&gt;</span>
-                <span class="nt">&lt;mealplan&gt;</span>
-                    <span class="nt">&lt;code&gt;</span>AI<span class="nt">&lt;/code&gt;</span>
-                    <span class="nt">&lt;name&gt;</span>All Inclusive<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;/mealplan&gt;</span>
-            <span class="nt">&lt;/rate&gt;</span>
-        <span class="nt">&lt;/room&gt;</span>
+        <span class="nt">&lt;rooms&gt;</span>
+            <span class="nt">&lt;room&gt;</span>
+                <span class="nt">&lt;code&gt;</span>DBLA2<span class="nt">&lt;/code&gt;</span>
+                <span class="nt">&lt;name&gt;</span>Double Standard<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;occupations&gt;</span>
+                    <span class="nt">&lt;occupation&gt;</span>
+                        <span class="nt">&lt;adults&gt;</span>2<span class="nt">&lt;/adults&gt;</span>
+                        <span class="nt">&lt;children&gt;</span>0<span class="nt">&lt;/children&gt;</span>
+                        <span class="nt">&lt;infant&gt;</span>0<span class="nt">&lt;/infant&gt;</span>
+                    <span class="nt">&lt;/occupation&gt;</span>
+                    <span class="nt">&lt;occupation&gt;</span>
+                        <span class="nt">&lt;adults&gt;</span>2<span class="nt">&lt;/adults&gt;</span>
+                        <span class="nt">&lt;children&gt;</span>1<span class="nt">&lt;/children&gt;</span>
+                        <span class="nt">&lt;infant&gt;</span>0<span class="nt">&lt;/infant&gt;</span>
+                    <span class="nt">&lt;/occupation&gt;</span>
+                <span class="nt">&lt;/occupations&gt;</span>
+                <span class="nt">&lt;rates&gt;</span>
+                    <span class="nt">&lt;rate&gt;</span>
+                        <span class="nt">&lt;code&gt;</span>NRE<span class="nt">&lt;/code&gt;</span>
+                        <span class="nt">&lt;name&gt;</span>No refundable rate<span class="nt">&lt;/name&gt;</span>
+                        <span class="nt">&lt;mealplans&gt;</span>
+                            <span class="nt">&lt;mealplan&gt;</span>
+                                <span class="nt">&lt;code&gt;</span>RO<span class="nt">&lt;/code&gt;</span>
+                                <span class="nt">&lt;name&gt;</span>Room Only<span class="nt">&lt;/name&gt;</span>
+                            <span class="nt">&lt;/mealplan&gt;</span>
+                            <span class="nt">&lt;mealplan&gt;</span>
+                                <span class="nt">&lt;code&gt;</span>AI<span class="nt">&lt;/code&gt;</span>
+                                <span class="nt">&lt;name&gt;</span>All Inclusive<span class="nt">&lt;/name&gt;</span>
+                            <span class="nt">&lt;/mealplan&gt;</span>
+                        <span class="nt">&lt;/mealplans&gt;</span>
+                    <span class="nt">&lt;/rate&gt;</span>
+                <span class="nt">&lt;/rates&gt;</span>
+            <span class="nt">&lt;/room&gt;</span>
+        <span class="nt">&lt;/rooms&gt;</span>
     <span class="nt">&lt;/hotel&gt;</span>
 <span class="nt">&lt;/RoomRatesRetrievalResponse&gt;</span>
+
 </code></pre></div>
 <p>Mensaje utilizado para consultar la información de un hotel (habitaciones y  tarifas).</p>
 <h3 id='roomratesretrievalrequest'>RoomRatesRetrievalRequest</h3>
@@ -489,7 +510,7 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <tr>
 <td>hotel</td>
 <td><strong>Hotel</strong></td>
-<td>Sí</td>
+<td>No</td>
 <td>Información relativa al hotel</td>
 </tr>
 <tr>
@@ -505,79 +526,103 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>Nombre del hotel</td>
 </tr>
 <tr>
-<td>↳ room[]</td>
+<td>↳ @rooms</td>
+<td><strong>Rooms</strong></td>
+<td>Si</td>
+<td>Informacion de las habitaciones</td>
+</tr>
+<tr>
+<td>↳↳ room[]</td>
 <td><strong>Room</strong></td>
 <td>Sí</td>
 <td>Información relativa a una habitacion del hotel</td>
 </tr>
 <tr>
-<td>↳↳ @code</td>
+<td>↳↳↳ @code</td>
 <td>String</td>
 <td>Sí</td>
 <td>Código de la habitacion</td>
 </tr>
 <tr>
-<td>↳↳ @name</td>
+<td>↳↳↳ @name</td>
 <td>String</td>
 <td>No</td>
 <td>Nombre de la habitacion</td>
 </tr>
 <tr>
-<td>↳↳ occupation[]</td>
-<td><strong>Occupation</strong></td>
+<td>↳↳↳ occupations</td>
+<td><strong>Occupations</strong></td>
 <td>Sí</td>
-<td>Ocupaciones de la habitacion</td>
+<td>Informacion de las ocupaciones de la habitacion</td>
 </tr>
 <tr>
-<td>↳↳↳ @adults</td>
+<td>↳↳↳↳ occupation[]</td>
+<td><strong>Occupation</strong></td>
+<td>Sí</td>
+<td>Informacion relativa a una ocupacion de la habitacion</td>
+</tr>
+<tr>
+<td>↳↳↳↳↳ @adults</td>
 <td><em>Integer</em></td>
 <td>Sí</td>
 <td>Numero de adultos de la ocupacion</td>
 </tr>
 <tr>
-<td>↳↳↳ @children</td>
+<td>↳↳↳↳↳ @children</td>
 <td><em>Integer</em></td>
 <td>No</td>
 <td>Numero de niños de la ocupacion</td>
 </tr>
 <tr>
-<td>↳↳↳ @infant</td>
+<td>↳↳↳↳↳ @infant</td>
 <td><em>Integer</em></td>
 <td>No</td>
 <td>Numero de bebés de la ocupacion</td>
 </tr>
 <tr>
-<td>↳↳ rate[]</td>
-<td><strong>Rate</strong></td>
+<td>↳↳↳ rates</td>
+<td><strong>Rates</strong></td>
 <td>Sí</td>
 <td>Información relativa a las tarifas de la habitacion</td>
 </tr>
 <tr>
-<td>↳↳↳ code</td>
+<td>↳↳↳↳ rate[]</td>
+<td><strong>Rate</strong></td>
+<td>Sí</td>
+<td>Información relativa a una tarifa de la habitacion</td>
+</tr>
+<tr>
+<td>↳↳↳↳↳ code</td>
 <td><em>String</em></td>
 <td>Sí</td>
 <td>Código de la tarifa</td>
 </tr>
 <tr>
-<td>↳↳↳ name</td>
+<td>↳↳↳↳↳ name</td>
 <td><em>String</em></td>
 <td>No</td>
 <td>Nombre de la tarifa</td>
 </tr>
 <tr>
-<td>↳↳↳ mealplan[]</td>
-<td><strong>Mealplan</strong></td>
+<td>↳↳↳↳ mealplans</td>
+<td><strong>Mealplans</strong></td>
 <td>Sí</td>
 <td>Informacion relativa a los regimenes alimenticios de la tarifa</td>
 </tr>
 <tr>
-<td>↳↳↳↳ code</td>
+<td>↳↳↳↳↳ mealplan[]</td>
+<td><strong>Mealplan</strong></td>
+<td>Sí</td>
+<td>Informacion relativa a un regimen alimenticio de la tarifa</td>
+</tr>
+<tr>
+<td>↳↳↳↳↳↳ code</td>
 <td><em>String</em></td>
 <td>Sí</td>
 <td>Código del regimen alimenticio</td>
 </tr>
 <tr>
-<td>↳↳↳↳ name</td>
+<td>↳↳↳↳↳↳ name</td>
 <td><em>String</em></td>
 <td>No</td>
 <td>Nombre del regimen alimenticio</td>
@@ -607,6 +652,803 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>Texto descriptivo de la notificación</td>
 </tr>
 </tbody></table>
+<h1 id='bookingretrieval'>BookingRetrieval</h1>
+<blockquote>
+<p>Ejemplo BookingRetrievalRequest para recuperar una reserva en particular por referencia (localizador)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;BookingRetrievalRequest&gt;</span>
+    <span class="nt">&lt;user&gt;</span>BAR<span class="nt">&lt;/user&gt;</span>
+    <span class="nt">&lt;password&gt;</span>FOOBAR<span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;hotelCode&gt;</span>ABC1234<span class="nt">&lt;/hotelCode&gt;</span>
+    <span class="nt">&lt;reference&gt;</span>AAABBB123456ZZZZ<span class="nt">&lt;/reference&gt;</span>
+<span class="nt">&lt;/BookingRetrievalRequest&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Ejemplo BookingRetrievalRequest para para recuperar las reservas de un hotel en un determinado rango de fechas (creadas, canceladas o modificadas)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;BookingRetrievalRequest&gt;</span>
+    <span class="nt">&lt;user&gt;</span>BAR<span class="nt">&lt;/user&gt;</span>
+    <span class="nt">&lt;password&gt;</span>FOOBAR<span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;hotelCode&gt;</span>ABC1234<span class="nt">&lt;/hotelCode&gt;</span>
+    <span class="nt">&lt;dateFrom&gt;</span>10/03/2017 14:30<span class="nt">&lt;/dateFrom&gt;</span>
+    <span class="nt">&lt;dateTo&gt;</span>10/03/2017 15:00<span class="nt">&lt;/dateTo&gt;</span>
+<span class="nt">&lt;/BookingRetrievalRequest&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Ejemplo respuesta BookingRetrievalResponse procesada correctamente
+La reserva recuperada contiene dos habitaciones: 1 doble </p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;BookingRetrievalResponse&gt;</span>
+    <span class="nt">&lt;booking&gt;</span>
+        <span class="nt">&lt;reference&gt;</span>AAAA123456789CCCC<span class="nt">&lt;/reference&gt;</span>
+        <span class="nt">&lt;clientReference&gt;</span>ZZZZ99998888XXXX<span class="nt">&lt;/clientReference&gt;</span>
+        <span class="nt">&lt;creationDate&gt;</span>01/01/2022 12:00:00<span class="nt">&lt;/creationDate&gt;</span>
+        <span class="nt">&lt;bookingRoom&gt;</span>
+            <span class="nt">&lt;dateFrom&gt;</span>05/02/2022<span class="nt">&lt;/dateFrom&gt;</span>
+            <span class="nt">&lt;dateTo&gt;</span>08/02/2022<span class="nt">&lt;/dateTo&gt;</span>
+            <span class="nt">&lt;hotelCode&gt;</span>1234<span class="nt">&lt;/hotelCode&gt;</span>
+            <span class="nt">&lt;rateCode&gt;</span>Test Rate 001<span class="nt">&lt;/rateCode&gt;</span>
+            <span class="nt">&lt;roomCode&gt;</span>DBL#STD<span class="nt">&lt;/roomCode&gt;</span>
+            <span class="nt">&lt;mealPlanCode&gt;</span>RO<span class="nt">&lt;/mealPlanCode&gt;</span>
+            <span class="nt">&lt;amount&gt;</span>300.0<span class="nt">&lt;/amount&gt;</span>
+            <span class="nt">&lt;currencyCode&gt;</span>EUR<span class="nt">&lt;/currencyCode&gt;</span>
+            <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
+            <span class="nt">&lt;guests&gt;</span>
+                <span class="nt">&lt;guest&gt;</span>
+                    <span class="nt">&lt;id&gt;</span>1<span class="nt">&lt;/id&gt;</span>
+                    <span class="nt">&lt;birthDate&gt;</span>01/01/1982<span class="nt">&lt;/birthDate&gt;</span>
+                    <span class="nt">&lt;name&gt;</span>John<span class="nt">&lt;/name&gt;</span>
+                    <span class="nt">&lt;surname&gt;</span>Doe<span class="nt">&lt;/surname&gt;</span>
+                    <span class="nt">&lt;lastname&gt;</span>Smith<span class="nt">&lt;/lastname&gt;</span>
+                <span class="nt">&lt;/guest&gt;</span>
+                <span class="nt">&lt;guest&gt;</span>
+                    <span class="nt">&lt;id&gt;</span>2<span class="nt">&lt;/id&gt;</span>
+                    <span class="nt">&lt;birthDate&gt;</span>01/01/1984<span class="nt">&lt;/birthDate&gt;</span>
+                    <span class="nt">&lt;name&gt;</span>Diana<span class="nt">&lt;/name&gt;</span>
+                    <span class="nt">&lt;surname&gt;</span>Doe<span class="nt">&lt;/surname&gt;</span>
+                    <span class="nt">&lt;lastname&gt;</span>Smith<span class="nt">&lt;/lastname&gt;</span>
+                <span class="nt">&lt;/guest&gt;</span>
+            <span class="nt">&lt;/guests&gt;</span>
+            <span class="nt">&lt;remarks&gt;</span>
+                <span class="nt">&lt;remark&gt;</span>
+                    <span class="nt">&lt;language&gt;</span>ES<span class="nt">&lt;/language&gt;</span>
+                    <span class="nt">&lt;text&gt;</span>Habitacion bonita<span class="nt">&lt;/text&gt;</span>
+                    <span class="nt">&lt;source&gt;</span>CLIENT<span class="nt">&lt;/source&gt;</span>
+                    <span class="nt">&lt;to&gt;</span>VENDOR<span class="nt">&lt;/to&gt;</span>
+                <span class="nt">&lt;/remark&gt;</span>
+            <span class="nt">&lt;/remarks&gt;</span>
+            <span class="nt">&lt;supplements&gt;</span>
+                <span class="nt">&lt;supplement&gt;</span>
+                    <span class="nt">&lt;description&gt;</span>Dinner VIP<span class="nt">&lt;/description&gt;</span>
+                    <span class="nt">&lt;dateFrom&gt;</span>05/02/2022<span class="nt">&lt;/dateFrom&gt;</span>
+                    <span class="nt">&lt;dateTo&gt;</span>08/02/2022<span class="nt">&lt;/dateTo&gt;</span>
+                    <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
+                    <span class="nt">&lt;amount&gt;</span>25.0<span class="nt">&lt;/amount&gt;</span>
+                    <span class="nt">&lt;mandatory&gt;</span>true<span class="nt">&lt;/mandatory&gt;</span>
+                    <span class="nt">&lt;referenceGuestId&gt;</span>1<span class="nt">&lt;/referenceGuestId&gt;</span>
+                    <span class="nt">&lt;referenceGuestId&gt;</span>2<span class="nt">&lt;/referenceGuestId&gt;</span>
+                <span class="nt">&lt;/supplement&gt;</span>
+            <span class="nt">&lt;/supplements&gt;</span>
+            <span class="nt">&lt;cancellationDetail&gt;</span>
+                <span class="nt">&lt;reason&gt;</span>Test cancel<span class="nt">&lt;/reason&gt;</span>
+                <span class="nt">&lt;description&gt;</span>description cancellation reason<span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;dateTimeCancellation&gt;</span>15/01/2022 15:00:00<span class="nt">&lt;/dateTimeCancellation&gt;</span>
+                <span class="nt">&lt;amount&gt;</span>50.0<span class="nt">&lt;/amount&gt;</span>
+            <span class="nt">&lt;/cancellationDetail&gt;</span>
+            <span class="nt">&lt;priceBreakDown&gt;</span>
+                <span class="nt">&lt;byDayBreakDown&gt;</span>
+                    <span class="nt">&lt;dayBreakDown&gt;</span>
+                        <span class="nt">&lt;day&gt;</span>05/02/2022<span class="nt">&lt;/day&gt;</span>
+                        <span class="nt">&lt;amount&gt;</span>100.0<span class="nt">&lt;/amount&gt;</span>
+                    <span class="nt">&lt;/dayBreakDown&gt;</span>
+                    <span class="nt">&lt;dayBreakDown&gt;</span>
+                        <span class="nt">&lt;day&gt;</span>06/02/2022<span class="nt">&lt;/day&gt;</span>
+                        <span class="nt">&lt;amount&gt;</span>100.0<span class="nt">&lt;/amount&gt;</span>
+                    <span class="nt">&lt;/dayBreakDown&gt;</span>
+                    <span class="nt">&lt;dayBreakDown&gt;</span>
+                        <span class="nt">&lt;day&gt;</span>07/02/2022<span class="nt">&lt;/day&gt;</span>
+                        <span class="nt">&lt;amount&gt;</span>100.0<span class="nt">&lt;/amount&gt;</span>
+                    <span class="nt">&lt;/dayBreakDown&gt;</span>
+                <span class="nt">&lt;/byDayBreakDown&gt;</span>
+                <span class="nt">&lt;byGuestBreakDown&gt;</span>
+                    <span class="nt">&lt;guestBreakDown&gt;</span>
+                        <span class="nt">&lt;referenceGuestId&gt;</span>1<span class="nt">&lt;/referenceGuestId&gt;</span>
+                        <span class="nt">&lt;amount&gt;</span>150.0<span class="nt">&lt;/amount&gt;</span>
+                    <span class="nt">&lt;/guestBreakDown&gt;</span>
+                    <span class="nt">&lt;guestBreakDown&gt;</span>
+                        <span class="nt">&lt;referenceGuestId&gt;</span>2<span class="nt">&lt;/referenceGuestId&gt;</span>
+                        <span class="nt">&lt;amount&gt;</span>150.0<span class="nt">&lt;/amount&gt;</span>
+                    <span class="nt">&lt;/guestBreakDown&gt;</span>
+                <span class="nt">&lt;/byGuestBreakDown&gt;</span>
+            <span class="nt">&lt;/priceBreakDown&gt;</span>
+        <span class="nt">&lt;/bookingRoom&gt;</span>
+        <span class="nt">&lt;contactPerson&gt;</span>
+            <span class="nt">&lt;nationality&gt;</span>ES<span class="nt">&lt;/nationality&gt;</span>
+            <span class="nt">&lt;birthDate&gt;</span>01/10/1975<span class="nt">&lt;/birthDate&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Contact<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;surname&gt;</span>Person Surname<span class="nt">&lt;/surname&gt;</span>
+            <span class="nt">&lt;email&gt;</span>test@test.com<span class="nt">&lt;/email&gt;</span>
+            <span class="nt">&lt;phoneNumber&gt;</span>666123456<span class="nt">&lt;/phoneNumber&gt;</span>
+            <span class="nt">&lt;address&gt;</span>
+                <span class="nt">&lt;addressLine&gt;</span>Carrer sense nom, 14<span class="nt">&lt;/addressLine&gt;</span>
+                <span class="nt">&lt;locationName&gt;</span>Palma<span class="nt">&lt;/locationName&gt;</span>
+                <span class="nt">&lt;postalCode&gt;</span>07500<span class="nt">&lt;/postalCode&gt;</span>
+                <span class="nt">&lt;country&gt;</span>ES<span class="nt">&lt;/country&gt;</span>
+            <span class="nt">&lt;/address&gt;</span>
+            <span class="nt">&lt;documentType&gt;</span>Passport<span class="nt">&lt;/documentType&gt;</span>
+            <span class="nt">&lt;documentNumber&gt;</span>123456789<span class="nt">&lt;/documentNumber&gt;</span>
+        <span class="nt">&lt;/contactPerson&gt;</span>
+        <span class="nt">&lt;payment&gt;</span>
+            <span class="nt">&lt;status/&gt;</span>
+            <span class="nt">&lt;amount&gt;</span>300.0<span class="nt">&lt;/amount&gt;</span>
+            <span class="nt">&lt;card&gt;</span>
+                <span class="nt">&lt;holder&gt;</span>TEST TEST TEST<span class="nt">&lt;/holder&gt;</span>
+                <span class="nt">&lt;number&gt;</span>4111111111111111<span class="nt">&lt;/number&gt;</span>
+                <span class="nt">&lt;series&gt;</span>123<span class="nt">&lt;/series&gt;</span>
+                <span class="nt">&lt;expiryDate&gt;</span>01/04/2025<span class="nt">&lt;/expiryDate&gt;</span>
+            <span class="nt">&lt;/card&gt;</span>
+            <span class="nt">&lt;type&gt;</span>Card<span class="nt">&lt;/type&gt;</span>
+        <span class="nt">&lt;/payment&gt;</span>
+        <span class="nt">&lt;remarks&gt;</span>
+            <span class="nt">&lt;remark&gt;</span>
+                <span class="nt">&lt;language&gt;</span>ES<span class="nt">&lt;/language&gt;</span>
+                <span class="nt">&lt;text&gt;</span>Nota Reserva<span class="nt">&lt;/text&gt;</span>
+                <span class="nt">&lt;source&gt;</span>CLIENT<span class="nt">&lt;/source&gt;</span>
+                <span class="nt">&lt;to&gt;</span>VENDOR<span class="nt">&lt;/to&gt;</span>
+            <span class="nt">&lt;/remark&gt;</span>
+        <span class="nt">&lt;/remarks&gt;</span>
+        <span class="nt">&lt;totalAmount&gt;</span>300.0<span class="nt">&lt;/totalAmount&gt;</span>
+        <span class="nt">&lt;supplements&gt;</span>
+            <span class="nt">&lt;supplement&gt;</span>
+                <span class="nt">&lt;description&gt;</span>Parking<span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;dateFrom&gt;</span>05/02/2022<span class="nt">&lt;/dateFrom&gt;</span>
+                <span class="nt">&lt;dateTo&gt;</span>08/02/2022<span class="nt">&lt;/dateTo&gt;</span>
+                <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
+                <span class="nt">&lt;amount&gt;</span>75.0<span class="nt">&lt;/amount&gt;</span>
+                <span class="nt">&lt;mandatory&gt;</span>true<span class="nt">&lt;/mandatory&gt;</span>
+            <span class="nt">&lt;/supplement&gt;</span>
+        <span class="nt">&lt;/supplements&gt;</span>
+    <span class="nt">&lt;/booking&gt;</span>
+<span class="nt">&lt;/BookingRetrievalResponse&gt;</span>
+
+</code></pre></div>
+<p>Mensaje utilizado para recuperación de reservas. Se puede recuperar una reserva en particular (filtrando por reference),
+o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un rango de fechas.</p>
+<h3 id='bookingretrievalrequest'>BookingRetrievalRequest</h3>
+<p>Mensaje petición de recuperación de reservas</p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre de Usuario</td>
+</tr>
+<tr>
+<td>password</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Password</td>
+</tr>
+<tr>
+<td>hotelCode</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Código de hotel</td>
+</tr>
+<tr>
+<td>dateFrom</td>
+<td><em>DateTime</em></td>
+<td>No<sup>1</sup></td>
+<td>Fecha desde. Devolverá todas las reservas que se hayan creado, cancelado o modificado a partir de esta fecha (dd/MM/yyyy HH:mm)</td>
+</tr>
+<tr>
+<td>dateTo</td>
+<td><em>DateTime</em></td>
+<td>No<sup>1</sup></td>
+<td>Fecha hasta. Devolverá todas las reservas que se hayan creado, cancelado o modificado hasta esta fecha (dd/MM/yyyy HH:mm)</td>
+</tr>
+<tr>
+<td>reference</td>
+<td><em>String</em></td>
+<td>No<sup>1</sup></td>
+<td>Localizador de la reserva</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<sup>1</sup>&nbsp;&nbsp;&nbsp;<b>Deberá informarse o el localizador o el rango de fechas.</b>
+</aside>
+<h3 id='bookingretrievalresponse'>BookingRetrievalResponse</h3>
+<p>Mensaje respuesta de recuperación de reservas</p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>booking[]</td>
+<td><strong>Booking</strong></td>
+<td>No</td>
+<td>Información de una reserva de hotel</td>
+</tr>
+<tr>
+<td>↳ reference</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Localizador de la reserva</td>
+</tr>
+<tr>
+<td>↳ clientReference</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Localizador de la agencia final</td>
+</tr>
+<tr>
+<td>↳ creationDate</td>
+<td><em>DateTime</em></td>
+<td>Sí</td>
+<td>Fecha de creación de la reserva (dd/MM/yyyy HH:mm)</td>
+</tr>
+<tr>
+<td>↳ bookingRoom[]</td>
+<td><strong>BookingRoom</strong></td>
+<td>Sí</td>
+<td>Información de habitación de hotel reservada</td>
+</tr>
+<tr>
+<td>↳↳ dateFrom</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Fecha de entrada (dd/MM/yyyy)</td>
+</tr>
+<tr>
+<td>↳↳ dateTo</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Fecha de salida (dd/MM/yyyy)</td>
+</tr>
+<tr>
+<td>↳↳ hotelCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de hotel</td>
+</tr>
+<tr>
+<td>↳↳ rateCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de la tarifa reservada</td>
+</tr>
+<tr>
+<td>↳↳ roomCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de habitación</td>
+</tr>
+<tr>
+<td>↳↳ mealPlanCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de régimen alimenticio</td>
+</tr>
+<tr>
+<td>↳↳ amount</td>
+<td><em>Double</em></td>
+<td>Sí</td>
+<td>Importe de la habitación reservada (#.##)</td>
+</tr>
+<tr>
+<td>↳↳ currencyCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de divisa (Códigos ISO 4217)</td>
+</tr>
+<tr>
+<td>↳↳ status</td>
+<td><em>Enum</em></td>
+<td>Sí</td>
+<td>Estado de la reserva (Confirmed, Cancelled, OnRequest)</td>
+</tr>
+<tr>
+<td>↳↳ guests</td>
+<td><strong>Guests</strong></td>
+<td>Sí</td>
+<td>Informacion de los huespedes de la reserva</td>
+</tr>
+<tr>
+<td>↳↳↳ guest[]</td>
+<td><strong>Guest</strong></td>
+<td>Sí</td>
+<td>Informacion de un huesped de la reserva</td>
+</tr>
+<tr>
+<td>↳↳↳↳ @id</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Identificador del huesped. Debe ser unico para toda la reserva.</td>
+</tr>
+<tr>
+<td>↳↳↳↳ birthDate</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Fecha de nacimiento (dd/MM/yyyy)</td>
+</tr>
+<tr>
+<td>↳↳↳↳ name</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre del huesped.</td>
+</tr>
+<tr>
+<td>↳↳↳↳ surname</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Apellido del huesped.</td>
+</tr>
+<tr>
+<td>↳↳↳↳ lastname</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Segundo apellido del huesped.</td>
+</tr>
+<tr>
+<td>↳↳ remarks</td>
+<td><strong>Remarks</strong></td>
+<td>No</td>
+<td>Notas de la habitacion</td>
+</tr>
+<tr>
+<td>↳↳↳ remark[]</td>
+<td><strong>Remarks</strong></td>
+<td>Si</td>
+<td>Informacion relativa a una nota</td>
+</tr>
+<tr>
+<td>↳↳↳↳ language</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Idioma del texto</td>
+</tr>
+<tr>
+<td>↳↳↳↳ text</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Texto de la nota</td>
+</tr>
+<tr>
+<td>↳↳↳↳ source</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Origen / Creador de la nota</td>
+</tr>
+<tr>
+<td>↳↳↳↳ to</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Destinatario de la nota</td>
+</tr>
+<tr>
+<td>↳↳ supplements</td>
+<td><strong>Supplements</strong></td>
+<td>No</td>
+<td>Suplementos de la habitacion</td>
+</tr>
+<tr>
+<td>↳↳↳ supplement[]</td>
+<td><strong>Supplement</strong></td>
+<td>Si</td>
+<td>Informacion relativa a un suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳↳ description</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Nombre / Descripcion del suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳↳ dateFrom</td>
+<td><em>Date</em></td>
+<td>Si</td>
+<td>Fecha de inicio del suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳↳ dateTo</td>
+<td><em>Date</em></td>
+<td>Si</td>
+<td>Fecha de fin del suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳↳ status</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Estado del suplemento(Confirmed, Cancelled)</td>
+</tr>
+<tr>
+<td>↳↳↳↳ amount</td>
+<td><em>Double</em></td>
+<td>Si</td>
+<td>Importe del suplemento (#.##)</td>
+</tr>
+<tr>
+<td>↳↳↳↳ mandatory</td>
+<td><em>Boolean</em></td>
+<td>Si</td>
+<td>Indica si es obligatorio el suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳↳ referenceGuestId[]</td>
+<td><em>Integer</em></td>
+<td>No</td>
+<td>Indica los ids de los huespedes afectados por el suplemento</td>
+</tr>
+<tr>
+<td>↳↳ cancellationDetail</td>
+<td><strong>CancellationDetail</strong></td>
+<td>No</td>
+<td>Informacion de los detalles de la cancelacion de la habitacion</td>
+</tr>
+<tr>
+<td>↳↳↳ reason</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Razon del motivo de la cancelacion de la reserva</td>
+</tr>
+<tr>
+<td>↳↳↳ description</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Descripcion de la cancelacion de la reserva</td>
+</tr>
+<tr>
+<td>↳↳↳ dateTimeCancellation</td>
+<td><em>DateTime</em></td>
+<td>Si</td>
+<td>Fecha y hora de la cancelación (dd/MM/yyyy HH:mm)</td>
+</tr>
+<tr>
+<td>↳↳↳ amount</td>
+<td><em>Double</em></td>
+<td>Si</td>
+<td>Importe de la cancelación (#.##)</td>
+</tr>
+<tr>
+<td>↳↳ priceBreakDown</td>
+<td><strong>PriceBreakDown</strong></td>
+<td>No</td>
+<td>Desglose de precios de la reserva</td>
+</tr>
+<tr>
+<td>↳↳↳ byDayBreakDown</td>
+<td><strong>ByDayBreakDown</strong></td>
+<td>No</td>
+<td>Desglose de precios de la reserva</td>
+</tr>
+<tr>
+<td>↳↳↳↳ dayBreakDown[]</td>
+<td><strong>DayBreakDown</strong></td>
+<td>Si</td>
+<td>Desglose de precios de la reserva por dia</td>
+</tr>
+<tr>
+<td>↳↳↳↳↳ day</td>
+<td><em>Date</em></td>
+<td>Si</td>
+<td>dia del desglose de precios por dia</td>
+</tr>
+<tr>
+<td>↳↳↳↳↳ amount</td>
+<td><em>Double</em></td>
+<td>Si</td>
+<td>Importe del desglose de precios por dia(#.##)</td>
+</tr>
+<tr>
+<td>↳↳↳ byGuestBreakDown</td>
+<td><strong>ByGuestBreakDown</strong></td>
+<td>No</td>
+<td>Desglose de precios de la reserva por pasajero</td>
+</tr>
+<tr>
+<td>↳↳↳↳ guestBreakDown[]</td>
+<td><strong>GuestBreakDown</strong></td>
+<td>Si</td>
+<td>Desglose de precios de la reserva por pasajero</td>
+</tr>
+<tr>
+<td>↳↳↳↳↳ referenceGuestId</td>
+<td><em>Integer</em></td>
+<td>Si</td>
+<td>Identificador del huesped</td>
+</tr>
+<tr>
+<td>↳↳↳↳↳ amount</td>
+<td><em>Double</em></td>
+<td>Si</td>
+<td>Importe del desglose de precios por huesped (#.##)</td>
+</tr>
+<tr>
+<td>↳ contactPerson</td>
+<td><strong>ContactPerson</strong></td>
+<td>Sí</td>
+<td>Información de la persona de contacto de la reserva</td>
+</tr>
+<tr>
+<td>↳↳ nationality</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Nacionalidad de la persona de contacto (ISO-3166)</td>
+</tr>
+<tr>
+<td>↳↳ birthDate</td>
+<td><em>Date</em></td>
+<td>No</td>
+<td>Fecha de nacimiento de la persona de contacto (dd/MM/yyyy)</td>
+</tr>
+<tr>
+<td>↳↳ name</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Nombre de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳ surname</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Apellido de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳ email</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Email de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳ phoneNumber</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Telefono de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳ address</td>
+<td><strong>Address</strong></td>
+<td>No</td>
+<td>Informacion de la direccion de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳↳ addressLine</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Direccion de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳↳ locationName</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Localidad de la direccion de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳↳ postalCode</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código postal de la direccion de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳↳ country</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Pais de la direccion de la persona de contacto(ISO-3166)</td>
+</tr>
+<tr>
+<td>↳↳ documentType</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Tipo de documento de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳ documentNumber</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Numero de documento de la persona de contacto</td>
+</tr>
+<tr>
+<td>↳ payment</td>
+<td><strong>Payment</strong></td>
+<td>No</td>
+<td>Información relativa al pago de la reserva</td>
+</tr>
+<tr>
+<td>↳↳ status</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Estado del pago de la reserva(Confirmed, Pending)</td>
+</tr>
+<tr>
+<td>↳↳ amount</td>
+<td><em>Double</em></td>
+<td>Si</td>
+<td>Importe del pago de la reserva</td>
+</tr>
+<tr>
+<td>↳↳ card</td>
+<td><strong>Card</strong></td>
+<td>Si</td>
+<td>Informacion de la tarjeta del pago de la reserva</td>
+</tr>
+<tr>
+<td>↳↳↳ holder</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Titular de la tarjeta de pago</td>
+</tr>
+<tr>
+<td>↳↳↳ number</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Numero de la tarjeta de pago</td>
+</tr>
+<tr>
+<td>↳↳↳ series</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>CVC de la tarjeta de pago</td>
+</tr>
+<tr>
+<td>↳↳↳ expiryDate</td>
+<td><em>Date</em></td>
+<td>Si</td>
+<td>Fecha de caducidad de la tarjeta de pago(dd/MM/yyyy)</td>
+</tr>
+<tr>
+<td>↳↳ type</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Tipo de pago de la reserva</td>
+</tr>
+<tr>
+<td>↳ remarks</td>
+<td><strong>Remarks</strong></td>
+<td>No</td>
+<td>Notas de la reserva</td>
+</tr>
+<tr>
+<td>↳↳ remark[]</td>
+<td><strong>Remarks</strong></td>
+<td>Si</td>
+<td>Informacion relativa a una nota</td>
+</tr>
+<tr>
+<td>↳↳↳ language</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Idioma del texto</td>
+</tr>
+<tr>
+<td>↳↳↳ text</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Texto de la nota</td>
+</tr>
+<tr>
+<td>↳↳↳ source</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Origen / Creador de la nota</td>
+</tr>
+<tr>
+<td>↳↳↳ to</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Destinatario de la nota</td>
+</tr>
+<tr>
+<td>↳ totalAmount</td>
+<td><em>Double</em></td>
+<td>Si</td>
+<td>Importe total de la reserva</td>
+</tr>
+<tr>
+<td>↳ supplements</td>
+<td><strong>Supplements</strong></td>
+<td>No</td>
+<td>Suplementos de la reserva</td>
+</tr>
+<tr>
+<td>↳↳ supplement[]</td>
+<td><strong>Supplement</strong></td>
+<td>Si</td>
+<td>Informacion relativa a un suplemento de la reserva</td>
+</tr>
+<tr>
+<td>↳↳↳ description</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Nombre / Descripcion del suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳ dateFrom</td>
+<td><em>Date</em></td>
+<td>Si</td>
+<td>Fecha de inicio del suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳ dateTo</td>
+<td><em>Date</em></td>
+<td>Si</td>
+<td>Fecha de fin del suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳ status</td>
+<td><em>String</em></td>
+<td>Si</td>
+<td>Estado del suplemento(Confirmed, Cancelled)</td>
+</tr>
+<tr>
+<td>↳↳↳ amount</td>
+<td><em>Double</em></td>
+<td>Si</td>
+<td>Importe del suplemento (#.##)</td>
+</tr>
+<tr>
+<td>↳↳↳ mandatory</td>
+<td><em>Boolean</em></td>
+<td>Si</td>
+<td>Indica si es obligatorio el suplemento</td>
+</tr>
+<tr>
+<td>↳↳↳ referenceGuestId[]</td>
+<td><em>Integer</em></td>
+<td>No</td>
+<td>Indica los ids de los huespedes afectados por el suplemento</td>
+</tr>
+<tr>
+<td>notification</td>
+<td><strong>Notification</strong></td>
+<td>No</td>
+<td>Información de notificación (Error o Warning)</td>
+</tr>
+<tr>
+<td>↳ type</td>
+<td><em>Enum</em></td>
+<td>Sí</td>
+<td>Tipo de notificación (E:Error, W: Warning)</td>
+</tr>
+<tr>
+<td>↳ code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de la notificación</td>
+</tr>
+<tr>
+<td>↳ text</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Texto descriptivo de la notificación</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+TODO aclaraciones de la reserva
+<sup>1</sup>&nbsp;&nbsp;&nbsp; Ejemplos: 
+<ul>
+   <li>Pago con tarjeta de garantía, pendiente de cobro, a cobrar en establecimiento. modality: Establishment, type: WarrantyCard, status: Pending</li>
+   <li>Pago inmediato, cobrado a traves de una pasarela de pago externa. modality: Inmediate, type: ExternalManaged, status: Ok</li>
+   <li>Pago a crédito, acordado con la agencia. modality: ExternManagement, type: Credit, status: Inapplicable</li>
+</ul>
+</aside>
 
       </div>
       <div class="dark-box">

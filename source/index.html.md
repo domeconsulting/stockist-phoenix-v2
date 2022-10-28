@@ -2,7 +2,7 @@
 title: API PUSH Stockist-Phoenix-V2
 
 language_tabs:
-  - json
+  - xml
 
 toc_footers:
   - <a href='mailto:soporte@hotetec.com'>soporte@hotetec.com</a>

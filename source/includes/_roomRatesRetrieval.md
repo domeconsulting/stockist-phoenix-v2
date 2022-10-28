@@ -2,27 +2,49 @@
 
 > Ejemplo RoomRatesRetrievalRequest para recuperar la información del hotel (habitaciones y tarifas)
 
-````json
-{
-    "RoomRatesRetrievalRequest": {
-        "user": "userTest",
-        "password": "passwordTest",
-        "hotelCode": "1234"
-    }
-}
-
+````xml
+<RoomRatesRetrievalRequest>
+	<user>userTest</user>
+	<password>passwordTest</password>
+	<hotelCode>1234</hotelCode>    
+</RoomRatesRetrievalRequest>
 ````
 
 > Ejemplo respuesta RoomRatesRetrievalResponse procesada correctamente
 
-````json
-{
-  "RoomRatesRetrievalResponse": {
-    "hotel": [{
-	
-	 }]  
-  }
-}
+````xml
+<RoomRatesRetrievalResponse>
+	<hotel>
+		<code>1234</code>
+		<name>Hotel Test</name>
+		<room>
+			<code>DBLA2</code>
+			<name>Double Standard</name>
+			<occupation>
+				<adults>2</adults>
+				<children>0</children>
+				<infant>0</infant>
+			</occupation>
+			<occupation>
+				<adults>2</adults>
+				<children>1</children>
+				<infant>0</infant>
+			</occupation>
+			<rate>
+				<code>NRE</code>
+				<name>No refundable rate</name>
+				<mealplan>
+					<code>RO</code>
+					<name>Room Only</name>
+				</mealplan>
+				<mealplan>
+					<code>AI</code>
+					<name>All Inclusive</name>
+				</mealplan>
+			</rate>
+		</room>
+	</hotel>
+</RoomRatesRetrievalResponse>
 ````
 
 Mensaje utilizado para consultar la información de un hotel (habitaciones y  tarifas).
@@ -43,27 +65,22 @@ Mensaje respuesta que contiene la información del hotel publicada.
 
 Elemento | Tipo | Obl? | Descripción
 --------- | ----------- | ----------- | -----------
-sessionId | *String* | Sí|Identificador de la sesión que ha procesado la transacción
-roomRate[] | **RoomRate** | No | Información asociada a una combinación de tarifa y modalidad de hotel
-↳ @rateCode| *String* | Sí | Código de tarifa
-↳ @roomCode| *String* | Sí | Código de modalidad
-↳ roomRateDate| **RomRateDate** | Sí | Información relativa a un rango de fechas
-↳↳ @dateFrom| *Date* | Sí | Fecha desde (dd/MM/yyyy, rangos cerrados)
-↳↳ @dateTo| *Date* | Sí | Fecha hasta (dd/MM/yyyy, rangos cerrados)
-↳↳ availableQuota| *Integer* | Sí | Unidades de cupo disponible
-↳↳ status| *Enum* | Sí | Estado del inventario <sup>1</sup> 
-↳↳ mealPlan[]| **MealPlan** | No | Información asociada al régimen alimenticio
-↳↳↳ @code| *String* | Sí | Código de régimen alimenticio
-↳↳↳ minimumStay| *Integer* | Sí | Días de estancia mínima (0: No hay estancia mínima)
-↳↳↳ maximumStay| *Integer* | Sí | Días de estancia máxima (0: No hay límite de estancia)
-↳↳↳ release| *Integer* | Sí | Días de release (0: No hay release)
-↳↳↳ closedOnCheckIn| *Boolean* | Sí | Indica si no está permitida la entrada
-↳↳↳ closedOnCheckOut| *Boolean* | Sí | Indica si no está permitida la salida
-↳↳↳ price[]| **Price** | Sí | Precio para una ocupación
-↳↳↳↳ adults| *Integer* | Sí | Número de adultos
-↳↳↳↳ children| *Integer* | Sí | Número de niños
-↳↳↳↳ amount| *Double* | Sí | Precio para el total de la ocupación (#.##)
-↳↳↳↳ status| *Enum* | Sí | Estado de la ocupación
+hotel| **Hotel** | Sí| Información relativa al hotel 
+↳ @code| *String* | Sí | Código del hotel
+↳ @name| *String* | NO | Nombre del hotel
+↳ room[]| **Room** | Sí | Información relativa a una habitacion del hotel
+↳↳ @code| String | Sí | Código de la habitacion 
+↳↳ @name| String | No | Nombre de la habitacion
+↳↳ occupation[]| **Occupation** | Sí | Ocupaciones de la habitacion
+↳↳↳ @adults| *Integer* | Sí | Numero de adultos de la ocupacion
+↳↳↳ @children| *Integer* | No | Numero de niños de la ocupacion
+↳↳↳ @infant| *Integer* | No | Numero de bebés de la ocupacion
+↳↳ rate[]| **Rate** | Sí | Información relativa a las tarifas de la habitacion
+↳↳↳ code| *String* | Sí | Código de la tarifa
+↳↳↳ name| *String* | No | Nombre de la tarifa
+↳↳↳ mealplan[]| **Mealplan** | Sí | Informacion relativa a los regimenes alimenticios de la tarifa
+↳↳↳↳ code| *String* | Sí | Código del regimen alimenticio
+↳↳↳↳ name| *String* | No | Nombre del regimen alimenticio
 notification | **Notification** | No |Información de notificación (Error o Warning)
 ↳ type | *Enum* | Sí |Tipo de notificación (E:Error, W: Warning)
 ↳ code | *String* | Sí | Código de la notificación

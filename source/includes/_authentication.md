@@ -1,13 +1,13 @@
 # Autenticación
 
-> Ejemplo elemento credentials, presente en todas las peticiones JSON
+> Ejemplo elemento credentials, presente en todas las peticiones XML
 
 
-````json
-{
-   "user": "userTest"
-   "password": "passwordTest",   
-}
+````xml
+<RoomRatesRetrievalRequest>
+   <user>userTest</user>
+   <password>passwordTest</password>   
+</RoomRatesRetrievalRequest>
 ````
 
 Todas las peticiones contienen los elementos user y password (ejemplo a la derecha), el cuál contiene las credenciales de autenticación (usuario y password) que deberán ser proporcionadas por el distribuidor.

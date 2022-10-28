@@ -14,7 +14,8 @@ includes:
   - version-control
   - conectivity
   - authentication
-  - roomRatesRetrieval  
+  - roomRatesRetrieval
+  - bookingRetrieval  
 
 search: true
 ---
